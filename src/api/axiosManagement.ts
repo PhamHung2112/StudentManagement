@@ -1,10 +1,12 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
+import queryString from 'query-string';
 
 const axiosManagement = axios.create({
-  baseURL: 'http://js-post-api.herokuapp.com/api',
+  baseURL: process.env.REACT_APP_MANAGEMENT_URL,
   headers: {
     'Content-Type': 'application/json',
   },
+  paramsSerializer: (params) => queryString.stringify(params),
 });
 
 axiosManagement.interceptors.request.use(

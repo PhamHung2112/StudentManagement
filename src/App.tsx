@@ -1,14 +1,28 @@
-import React, { useEffect } from 'react';
-import cityApi from './api/cityApi';
+import { AuthRoute, NotFound, PrivateRoute } from 'components';
+import { PathEnum } from 'constants/path';
+import Login from 'features/Auth/pages/Login';
+import Register from 'features/Auth/pages/Register';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
-  useEffect(() => {
-    (async () => {
-      const response: any = await cityApi.getAll();
-      console.log(response);
-    })();
-  }, []);
-  return <div className="App"></div>;
+  return (
+    <Switch>
+      <AuthRoute path={PathEnum.LOGIN} exact>
+        <Login />
+      </AuthRoute>
+
+      <AuthRoute path={PathEnum.REGISTER} exact>
+        <Register />
+      </AuthRoute>
+
+      <PrivateRoute path="/"></PrivateRoute>
+
+      <Route>
+        <NotFound />
+      </Route>
+    </Switch>
+  );
 }
 
 export default App;

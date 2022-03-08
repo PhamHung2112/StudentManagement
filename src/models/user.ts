@@ -23,14 +23,14 @@ export interface UserInfor {
   confirmed: boolean;
   blocked: any;
   role: Role;
-}
-
-export interface User {
-  jwt: string;
-  user: UserInfor;
   created_at: string;
   updated_at: string;
   created_by: any;
   updated_by: any;
   fullName: string;
+}
+
+export interface User {
+  jwt: string;
+  user: UserInfor;
 }
