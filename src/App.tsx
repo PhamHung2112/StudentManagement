@@ -1,26 +1,25 @@
-import { AuthRoute, NotFound, PrivateRoute } from 'components';
+import { AuthRoute, PrivateRoute } from 'components';
 import { PathEnum } from 'constants/path';
-import Login from 'features/Auth/pages/Login';
-import Register from 'features/Auth/pages/Register';
+import LoginPage from 'features/Auth/pages/Login';
+import RegisterPage from 'features/Auth/pages/Register';
+import HomeLayout from 'layout/Home/HomeLayout';
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 
 function App() {
   return (
     <Switch>
       <AuthRoute path={PathEnum.LOGIN} exact>
-        <Login />
+        <LoginPage />
       </AuthRoute>
 
       <AuthRoute path={PathEnum.REGISTER} exact>
-        <Register />
+        <RegisterPage />
       </AuthRoute>
 
-      <PrivateRoute path="/"></PrivateRoute>
-
-      <Route>
-        <NotFound />
-      </Route>
+      <PrivateRoute path={PathEnum.HOME_PAGE}>
+        <HomeLayout />
+      </PrivateRoute>
     </Switch>
   );
 }

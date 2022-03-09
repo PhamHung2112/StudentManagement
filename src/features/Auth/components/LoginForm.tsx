@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import LoginIcon from '@mui/icons-material/Login';
-import { Box, Button, CircularProgress, Container, Theme, Typography } from '@mui/material';
+import { Login } from '@mui/icons-material';
+import { Box, Button, CircularProgress, Container, Typography } from '@mui/material';
 import { useAppSelector } from 'app/hooks';
 import LoginImage from 'assets/images/LoginImage.jpg';
 import { InputField, PasswordField } from 'components';
@@ -48,7 +48,7 @@ export default function LoginForm({ initialValues, onSubmit }: LoginFormProps) {
           flexFlow: 'row-reverse nowrap',
           alignItems: 'center',
           border: 1,
-          borderColor: (theme: Theme) => theme.palette.divider,
+          borderColor: (theme) => theme.palette.divider,
           boxShadow: 1,
           padding: '30px',
         }}
@@ -66,7 +66,7 @@ export default function LoginForm({ initialValues, onSubmit }: LoginFormProps) {
             type="submit"
             sx={{ mt: 2 }}
             fullWidth
-            startIcon={<LoginIcon />}
+            startIcon={<Login />}
             disabled={loading}
           >
             Log in {loading && <CircularProgress sx={{ ml: 1 }} size={20} />}

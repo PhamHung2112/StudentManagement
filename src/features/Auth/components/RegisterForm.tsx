@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import HowToRegIcon from '@mui/icons-material/HowToReg';
-import { Box, Button, CircularProgress, Container, Theme, Typography } from '@mui/material';
+import { HowToReg } from '@mui/icons-material';
+import { Box, Button, CircularProgress, Container, Typography } from '@mui/material';
 import { useAppSelector } from 'app/hooks';
 import RegisterImage from 'assets/images/RegisterImage.jpg';
 import { InputField, PasswordField } from 'components';
@@ -60,7 +60,7 @@ export default function RegisterForm({ initialValues, onSubmit }: RegisterFormPr
           flexFlow: 'row nowrap',
           alignItems: 'center',
           border: 1,
-          borderColor: (theme: Theme) => theme.palette.divider,
+          borderColor: (theme) => theme.palette.divider,
           boxShadow: 1,
           padding: '30px',
         }}
@@ -80,7 +80,7 @@ export default function RegisterForm({ initialValues, onSubmit }: RegisterFormPr
             type="submit"
             sx={{ mt: 2 }}
             fullWidth
-            startIcon={<HowToRegIcon />}
+            startIcon={<HowToReg />}
             disabled={loading}
           >
             Sign up {loading && <CircularProgress sx={{ ml: 1 }} size={20} />}

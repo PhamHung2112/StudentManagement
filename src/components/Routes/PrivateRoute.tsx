@@ -6,7 +6,7 @@ export function PrivateRoute(props: RouteProps) {
   const isLoggedIn = Boolean(localStorage.getItem(StorageEnum.TOKEN));
 
   if (!isLoggedIn) {
-    <Redirect to={PathEnum.LOGIN} />;
+    return <Redirect to={PathEnum.LOGIN} />;
   }
 
   return <Route {...props} />;

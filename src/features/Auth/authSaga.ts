@@ -29,8 +29,7 @@ function* handleLogin(action: PayloadAction<UserPayload>) {
     const response: User = yield call(userApi.login, action.payload);
     yield put(authActions.loginSuccess(response));
     localStorage.setItem(StorageEnum.TOKEN, response.jwt);
-    localStorage.setItem(StorageEnum.USER, JSON.stringify(response.user));
-    yield put(push(PathEnum.DASHBOARD));
+    yield put(push(PathEnum.HOME_PAGE));
   } catch (error) {
     yield put(authActions.loginFailed());
     yield call(toast.error, (error as Error).message, {
@@ -41,8 +40,7 @@ function* handleLogin(action: PayloadAction<UserPayload>) {
 
 function* handleLogout() {
   localStorage.removeItem(StorageEnum.TOKEN);
-  localStorage.removeItem(StorageEnum.USER);
-  yield push(PathEnum.LOGIN);
+  yield put(push(PathEnum.LOGIN));
 }
 
 function* watchRegisterFlow() {

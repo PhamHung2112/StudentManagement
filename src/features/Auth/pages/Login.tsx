@@ -3,7 +3,7 @@ import { UserPayload } from 'models';
 import { authActions } from '../authSlice';
 import LoginForm from '../components/LoginForm';
 
-export default function Login() {
+export default function LoginPage() {
   const dispatch = useAppDispatch();
 
   const initialValues: UserPayload = {

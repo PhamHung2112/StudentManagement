@@ -3,7 +3,7 @@ import { UserPayload } from 'models';
 import { authActions } from '../authSlice';
 import RegisterForm from '../components/RegisterForm';
 
-export default function Register() {
+export default function RegisterPage() {
   const dispatch = useAppDispatch();
 
   const initialValues: UserPayload = {
