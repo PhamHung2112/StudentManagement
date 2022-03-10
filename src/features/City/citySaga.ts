@@ -11,9 +11,7 @@ function* fetchCityList(action: PayloadAction<ListParams>) {
     yield put(cityActions.fetchCityListSuccess(response));
   } catch (error) {
     yield put(cityActions.fetchCityListFailed());
-    yield call(toast.error, (error as Error).message, {
-      theme: 'colored',
-    });
+    yield call(toast.error, (error as Error).message);
   }
 }
 

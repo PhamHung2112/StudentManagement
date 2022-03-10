@@ -5,6 +5,7 @@ import { PathEnum } from 'constants/path';
 import CityPage from 'features/City/pages';
 import DashboardPage from 'features/Dashboard/pages';
 import HomePage from 'features/Homepage/pages';
+import StudentPage from 'features/Student/pages';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 export default function HomeLayout() {
@@ -30,7 +31,9 @@ export default function HomeLayout() {
             <DashboardPage />
           </Route>
 
-          <Route path={PathEnum.STUDENT_LIST} exact></Route>
+          <Route path={PathEnum.STUDENT_LIST}>
+            <StudentPage />
+          </Route>
 
           <Route path={PathEnum.CITY_LIST} exact>
             <CityPage />

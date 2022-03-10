@@ -74,9 +74,7 @@ function* fetchDashboardData() {
     yield put(dashboardActions.fetchDataSuccess());
   } catch (error) {
     yield put(dashboardActions.fetchDataFailed());
-    yield call(toast.error, (error as Error).message, {
-      theme: 'colored',
-    });
+    yield call(toast.error, (error as Error).message);
   }
 }
 

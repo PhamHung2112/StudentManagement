@@ -27,12 +27,12 @@ export default function CityFilters({ filter, onChange, onSearchChange }: CityFi
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (!onSearchChange) return;
 
-    const newFilters: ListParams = {
+    const newFilter: ListParams = {
       ...filter,
       name_like: e.target.value,
     };
 
-    onSearchChange(newFilters);
+    onSearchChange(newFilter);
   };
 
   const handleSortChange = (e: SelectChangeEvent<any>) => {
@@ -41,13 +41,13 @@ export default function CityFilters({ filter, onChange, onSearchChange }: CityFi
     const value = e.target.value;
     const [_sort, _order] = (value as string).split('.');
 
-    const newFilters: ListParams = {
+    const newFilter: ListParams = {
       ...filter,
       _sort: _sort || undefined,
       _order: (_order as 'asc' | 'desc') || undefined,
     };
 
-    onChange(newFilters);
+    onChange(newFilter);
   };
 
   const handleClearFilter = () => {

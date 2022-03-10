@@ -37,12 +37,14 @@ export default function DashboardPage() {
     <Box margin="100px 30px 0 30px">
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Box>
-          <Typography variant="h6" fontWeight={500} marginBottom="5px">
+          <Typography variant="h5" fontWeight={500} marginBottom="5px">
             Dashboard
           </Typography>
           <Breadcrumbs aria-label="breadcrumb">
             <Typography color="inherit">Home</Typography>
-            <Typography color="text.primary">Dashboard</Typography>
+            <Typography color="primary" fontWeight={500}>
+              Dashboard
+            </Typography>
           </Breadcrumbs>
         </Box>
         <Box>

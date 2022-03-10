@@ -19,7 +19,7 @@ import rootSaga from './rootSaga';
 const persistConfig = {
   key: 'root',
   storage,
-  blacklist: ['auth', 'router', 'dashboard', 'city'],
+  blacklist: ['auth', 'router', 'dashboard', 'city', 'student'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

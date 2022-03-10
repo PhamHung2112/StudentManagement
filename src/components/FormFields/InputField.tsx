@@ -1,8 +1,8 @@
 import { TextField } from '@mui/material';
-import { HTMLAttributes } from 'react';
+import { InputHTMLAttributes } from 'react';
 import { Control, useController } from 'react-hook-form';
 
-export interface InputFieldProps extends HTMLAttributes<HTMLInputElement> {
+export interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   control: Control<any>;
 

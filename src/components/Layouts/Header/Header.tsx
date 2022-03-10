@@ -34,7 +34,7 @@ export function Header() {
       right={0}
       left="250px"
       borderBottom="1px solid rgba(0, 0, 0, 0.05)"
-      zIndex={1}
+      zIndex={999}
       padding="18px 30px"
       bgcolor="#fff"
     >

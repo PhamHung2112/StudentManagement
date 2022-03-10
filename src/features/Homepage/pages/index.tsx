@@ -5,12 +5,14 @@ export default function HomePage() {
   return (
     <Box margin="100px 30px 0 30px" textAlign="center">
       <Box>
-        <Typography variant="h6" fontWeight={500} marginBottom="5px" align="left">
+        <Typography variant="h5" fontWeight={500} marginBottom="5px" align="left">
           Homepage
         </Typography>
         <Breadcrumbs aria-label="breadcrumb">
           <Typography color="inherit">Home</Typography>
-          <Typography color="text.primary">Homepage</Typography>
+          <Typography color="primary" fontWeight={500}>
+            Homepage
+          </Typography>
         </Breadcrumbs>
       </Box>
       <Box padding="30px">

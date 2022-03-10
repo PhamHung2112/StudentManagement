@@ -1,5 +1,6 @@
 import { Box, Breadcrumbs, Container, Typography } from '@mui/material';
 import { useAppDispatch, useAppSelector } from 'app/hooks';
+import { ListParams } from 'models';
 import { useEffect } from 'react';
 import { cityActions, selectCityFilter, selectCityList } from '../citySlice';
 import CityFilters from '../components/CityFilters';
@@ -14,23 +15,25 @@ export default function CityPage() {
     dispatch(cityActions.fetchCityList(filter));
   }, [dispatch, filter]);
 
-  const handleSearchChange = (newFilter) => {
+  const handleSearchChange = (newFilter: ListParams) => {
     dispatch(cityActions.setFilterWithDebounce(newFilter));
   };
 
-  const handleFilterChange = (newFilter) => {
+  const handleFilterChange = (newFilter: ListParams) => {
     dispatch(cityActions.setFilter(newFilter));
   };
 
   return (
     <Box margin="100px 30px 0 30px">
       <Box>
-        <Typography variant="h6" fontWeight={500} marginBottom="5px">
+        <Typography variant="h5" fontWeight={500} marginBottom="5px">
           City
         </Typography>
         <Breadcrumbs aria-label="breadcrumb">
           <Typography color="inherit">Home</Typography>
-          <Typography color="text.primary">City</Typography>
+          <Typography color="primary" fontWeight={500}>
+            City
+          </Typography>
         </Breadcrumbs>
       </Box>
       <Box padding="30px">

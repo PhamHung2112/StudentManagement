@@ -12,15 +12,11 @@ function* handleRegister(action: PayloadAction<UserPayload>) {
   try {
     const response: User = yield call(userApi.register, action.payload);
     yield put(authActions.registerSuccess(response));
-    yield call(toast.success, 'Register successfully', {
-      theme: 'colored',
-    });
+    yield call(toast.success, 'Register successfully');
     yield put(push(PathEnum.LOGIN));
   } catch (error) {
     yield put(authActions.registerFailed());
-    yield call(toast.error, (error as Error).message, {
-      theme: 'colored',
-    });
+    yield call(toast.error, (error as Error).message);
   }
 }
 
@@ -32,9 +28,7 @@ function* handleLogin(action: PayloadAction<UserPayload>) {
     yield put(push(PathEnum.HOME_PAGE));
   } catch (error) {
     yield put(authActions.loginFailed());
-    yield call(toast.error, (error as Error).message, {
-      theme: 'colored',
-    });
+    yield call(toast.error, (error as Error).message);
   }
 }
 

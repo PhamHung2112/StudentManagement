@@ -54,7 +54,6 @@ export function Sidebar() {
           </Typography>
           <ListMenu options={MANAGEMENT_MENU} />
         </Box>
-        <Box></Box>
       </Box>
     </Box>
   );
